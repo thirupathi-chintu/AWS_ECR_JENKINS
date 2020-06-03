@@ -1,12 +1,11 @@
 node {
-    def app
 
     stage('Clone repository') {
-        git branch: "master", url: "git@github.com:example-dev/go-queue-consumer.git", credentialsId: "jenkins-example-github"
+        git branch: "master", url: "git@github.com:thirupathi-chintu/AWS_ECR_JENKINS.git", credentialsId: "devops"
     }
 
     stage('Build image') {
-        sh "docker build --build-arg APP_NAME=receipts -t 534***385.dkr.ecr.us-east-2.amazonaws.com/bttrm-receipt-consumer:latest -f docker/prod/Dockerfile ."
+        sh "docker build --build-arg -t 534***385.dkr.ecr.us-east-2.amazonaws.com/bttrm-receipt-consumer:latest -f Dockerfile ."
     }
 
     stage('Push image') {

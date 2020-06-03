@@ -5,7 +5,7 @@ node {
     }
 
     stage('Build image') {
-        sh "docker build --build-arg -t 534***385.dkr.ecr.us-east-2.amazonaws.com/bttrm-receipt-consumer:latest -f Dockerfile ."
+        sh "docker build -t 534***385.dkr.ecr.us-east-2.amazonaws.com/bttrm-receipt-consumer:latest ."
     }
 
     stage('Push image') {
